@@ -1,6 +1,8 @@
 package com.example.eatsafe_v2
 
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +11,7 @@ import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
+import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ScanMode
 
 private const val CAMERA_REQUEST_CODE= 101
@@ -22,6 +25,14 @@ class ScannerActivity : AppCompatActivity() {
         setupPermmisions()
        codeScanner()
     }
+    fun scanResult(query: String) {
+
+        val url = "https://www.youtube.com"
+        val intent = Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url))
+        startActivity(intent)
+
+    }
 
     private fun codeScanner(){
         scannerView = findViewById(R.id.scanner_view)
@@ -31,11 +42,18 @@ class ScannerActivity : AppCompatActivity() {
             camera = CodeScanner.CAMERA_BACK
             formats = CodeScanner.ALL_FORMATS
             autoFocusMode = AutoFocusMode.SAFE
-            scanMode = ScanMode.CONTINUOUS
+            scanMode = ScanMode.SINGLE
             isAutoFocusEnabled = true
             isFlashEnabled = false
+            decodeCallback = DecodeCallback {
 
-            
+                scanResult(it.text)
+            }
+
+
+            scannerView.setOnClickListener {
+                codeScanner.startPreview()
+            }
         }
     }
     override fun onResume(){
