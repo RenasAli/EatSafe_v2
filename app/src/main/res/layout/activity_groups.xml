@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupsActivity">
+    tools:context=".GroupsActivity"
+    android:background="@color/grin">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
@@ -14,93 +15,186 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/menu" />
 
-    <LinearLayout
 
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="612dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/grin"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_style"
+        android:text="Make new group"
+        app:icon="@drawable/baseline_add_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_style"
-            android:text="Make new group"
-            app:icon="@drawable/baseline_add_24">
+    </Button>
 
-        </Button>
+    <TextView
 
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:text="  Available Groups"
+        android:textColor="@color/purple_500"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
 
-        <TextView
+    <Switch
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="Available Groups"
-            android:textColor="@color/purple_500"
-            android:textSize="25sp" />
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
 
-        <Switch
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/switchColor"
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:text=" 🌾  "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
 
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Gluten"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Gluten"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
 
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <Switch
 
-        <Switch
+        android:id="@+id/switch4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/switchColor"
+        android:text=" 🥚  "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/switch1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Egg"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch4"
+        app:layout_constraintTop_toTopOf="@+id/switch4" />
+    <Switch
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Egg"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+        android:id="@+id/switch5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/switchColor"
+        android:text=" 🥛   "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/switch4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switch4"
+        app:layout_constraintTop_toBottomOf="@+id/switch4"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="   Dairy Product"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch5"
+        app:layout_constraintTop_toTopOf="@+id/switch5" />
+    <Switch
 
-        <Switch
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/switchColor"
+        android:text=" 🍻  "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/switch5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switch5"
+        app:layout_constraintTop_toBottomOf="@+id/switch5"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text=" Alcohol"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch2"
+        app:layout_constraintTop_toTopOf="@+id/switch2" />
+    <Switch
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Dairy Product"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+        android:id="@+id/switch6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/switchColor"
+        android:text=" 🐟  "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/switch2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switch2"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="   Fish &amp; Shellfish"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch6"
+        app:layout_constraintTop_toTopOf="@+id/switch6" />
+    <Switch
+        android:id="@+id/switch7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/switchColor"
+        android:text=" ☘️  "
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/switch6"
+        app:layout_constraintTop_toBottomOf="@+id/switch6"
+        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="   Non-Vegan"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="@+id/switch7"
+        app:layout_constraintTop_toTopOf="@+id/switch7" />
 
-        <Switch
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Meat"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
-
-        <Switch
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Fish &amp; Shellfish"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
-
-        <Switch
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/switchColor"
-            android:text="  Non-Vegan"
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
