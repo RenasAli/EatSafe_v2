@@ -19,17 +19,28 @@ private const val CAMERA_REQUEST_CODE= 101
 class ScannerActivity : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner
     private lateinit var scannerView: CodeScannerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanner)
         setupPermmisions()
        codeScanner()
     }
-    fun scanResult(query: String) {
+   private fun safeToEatResult(){
+       val safeToEatIntent = Intent(this, SafeToEatActivity::class.java)
+       startActivity(safeToEatIntent);
+   }
+    private fun unSafeToEatResult(){
+        val UnsafeToEatIntent = Intent(this, UnsafeActivity::class.java)
+        startActivity(UnsafeToEatIntent);
+    }
 
-        val url = "https://www.youtube.com"
+    private fun searchWeb(query: String) {
+
+        val url = query
         val intent = Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url))
+
         startActivity(intent)
 
     }
@@ -46,8 +57,20 @@ class ScannerActivity : AppCompatActivity() {
             isAutoFocusEnabled = true
             isFlashEnabled = false
             decodeCallback = DecodeCallback {
+                runOnUiThread {
+                    if (it.text == "6548964631668"){
+                    Toast.makeText(applicationContext,"Scan result: ${it.text} it is safe to eat", Toast.LENGTH_LONG).show()
+                        safeToEatResult()
+                    } else if (it.text == "8949461894984"){
+                        Toast.makeText(applicationContext,"Scan result: ${it.text} it is Not safe to eat", Toast.LENGTH_LONG).show()
+                        unSafeToEatResult()
+                    } else {
+                        searchWeb(it.text)
 
-                scanResult(it.text)
+                    }
+            }
+
+
             }
 
 

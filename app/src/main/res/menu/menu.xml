@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+
+    >
 
     <item android:title="Scan"
         android:icon="@drawable/baseline_document_scanner_24"
-        android:id="@+id/menuScanner"/>
+        android:id="@+id/menuScanner"
+        />
 
     <item android:title="Groups"
            android:icon="@drawable/baseline_menu_24"
@@ -14,4 +18,5 @@
         android:icon="@drawable/baseline_wallet_24"
         android:id="@+id/menuWallet"
         />
+
 </menu>
